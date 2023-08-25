@@ -1,0 +1,19 @@
+.page {
+  background-color: $color-light-gray;
+  color: $color-primary;
+
+  &__container {
+    max-width: 1400px;
+    margin: auto;
+  }
+}
+
+.title {
+  color: $color-primary;
+  font-weight: 800;
+  font-size: 1rem;
+
+  @include media(desktop) {
+    font-size: 1.3rem;
+  }
+}

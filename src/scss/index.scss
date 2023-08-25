@@ -1,0 +1,9 @@
+@import "colors.scss";
+@import "reset.scss";
+@import "mixins.scss";
+@import "main.scss";
+
+@import "../components/Header/Header.scss";
+@import "../components/TopEvents/TopEvents.scss";
+@import "../components/Events/Events.scss";
+@import "../components/Event/Event.scss";

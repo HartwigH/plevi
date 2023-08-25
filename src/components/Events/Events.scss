@@ -1,0 +1,18 @@
+.Events {
+  padding: 1.2rem;
+
+  @include media(desktop) {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-family: Garamond;
+    font-size: 2rem;
+  }
+
+  &__container {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,94 @@
+.Event {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+
+  @include media(desktop) {
+    display: block;
+    background-color: $color-white;
+    position: relative;
+    width: 324px;
+    margin: 0 0.5rem 2rem 0.5rem;
+
+    padding: 0 0 2rem 0;
+    border-radius: 0.5rem;
+
+    &:first-child {
+      margin: 0 0.5rem 2rem 0;
+    }
+
+    &:nth-child(4n + 1) {
+      margin: 0 0.5rem 2rem 0;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      height: 24px;
+      width: 24px;
+      top: 3%;
+      right: 3%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' viewBox='0 0 24 24' fill='%23000' fill-opacity='0.1'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Crect width='24' height='24' fill='none'/%3E%3Cpath d='M21 8.99998C21 12.7539 15.7156 17.9757 12.5857 20.5327C12.2416 20.8137 11.7516 20.8225 11.399 20.5523C8.26723 18.1523 3 13.1225 3 8.99998C3 2.00001 12 2.00002 12 8C12 2.00001 21 1.99999 21 8.99998Z' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    flex: 30%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    @include media(desktop) {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      width: 324px;
+      height: 150px;
+      max-width: none;
+      max-height: none;
+    }
+  }
+
+  &__content {
+    flex: 70%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include media(desktop) {
+      height: 150px;
+    }
+
+    &__date {
+      padding: 0.5rem 0;
+      color: $color-purple;
+      font-weight: 600;
+      order: 1;
+      font-size: 0.8rem;
+
+      @include media(desktop) {
+        order: unset;
+        padding: 1rem 0;
+        font-size: 1rem;
+      }
+    }
+
+    &__location {
+      font-weight: 600;
+      font-size: 0.8rem;
+      order: 1;
+
+      @include media(desktop) {
+        order: unset;
+        margin-top: auto;
+        font-size: 1rem;
+      }
+    }
+  }
+}

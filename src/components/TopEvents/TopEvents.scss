@@ -1,0 +1,138 @@
+.TopEvents {
+  margin: 1.5rem 0;
+  background-color: $color-white;
+  border-radius: 1rem;
+
+  box-shadow: inset 0 0 1px 2px $color-shadow;
+  -moz-box-shadow: inset 0 0 1px 2px $color-shadow;
+  -webkit-box-shadow: inset 0 0 1px 2px $color-shadow;
+
+  @include media(desktop) {
+    border-radius: 2rem;
+    margin: 3.5rem 0;
+  }
+
+  &__container {
+    position: relative;
+
+    @include media(desktop) {
+      padding: 1.5rem;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 60px;
+        width: 40px;
+        top: -10%;
+        left: 2%;
+        background: url("data:image/svg+xml,%3Csvg width=%2240%22 height=%2260%22 viewBox=%220 0 40 60%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%0A    %3Cpath d=%22M40 39.9999L40 39.5L20 39.5L20 59.9999L40 39.9999Z%22 fill=%22%2319005F%22/%3E%0A    %3Cpath d=%22M40 0L0 40H40V0Z%22 fill=%22%23FF0033%22/%3E%0A%3C/svg%3E%0A")
+          no-repeat;
+      }
+    }
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__title {
+        padding: 1.2rem;
+
+        @include media(desktop) {
+          padding: 1rem 0;
+        }
+      }
+
+      &__navigation {
+        display: none;
+
+        @include media(desktop) {
+          display: flex;
+          align-items: center;
+
+          &__position {
+            letter-spacing: -2px;
+          }
+
+          &__arrow-left {
+            margin: 0 1rem;
+            width: 21px;
+            height: 16px;
+            background-color: rgba($color-purple, 0.5);
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' width='21px' version='1.1' id='Layer_1' viewBox='0 0 330.002 330.002' xml:space='preserve'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath id='XMLID_227_' d='M233.25,306.001L127.5,165.005L233.25,24.001c4.971-6.628,3.627-16.03-3-21c-6.627-4.971-16.03-3.626-21,3 L96.75,156.005c-4,5.333-4,12.667,0,18l112.5,149.996c2.947,3.93,7.451,6.001,12.012,6.001c3.131,0,6.29-0.978,8.988-3.001 C236.878,322.03,238.221,312.628,233.25,306.001z'/%3E%3C/g%3E%3C/svg%3E");
+          }
+
+          &__arrow-right {
+            margin: 0 1rem;
+            width: 21px;
+            height: 16px;
+            background-color: $color-purple;
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='16px' width='21px' version='1.1' id='Layer_1' viewBox='0 0 330 330' xml:space='preserve'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'/%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath id='XMLID_222_' d='M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001 c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213 C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606 C255,161.018,253.42,157.202,250.606,154.389z'/%3E%3C/g%3E%3C/svg%3E");
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 0 2.5rem 0;
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      @include media(desktop) {
+        overflow: auto;
+        padding: 1.5rem 0;
+      }
+
+      &__event {
+        position: relative;
+        width: 250px;
+        margin: 0 0.5rem;
+
+        &:first-child {
+          margin: 0 0.5rem 0 1.2rem;
+        }
+
+        @include media(desktop) {
+          margin: 0;
+
+          &:first-child {
+            margin: 0;
+          }
+        }
+
+        &:before {
+          content: attr(data-index);
+          width: 30px;
+          height: 25px;
+          position: absolute;
+          z-index: 1;
+          top: 5%;
+          left: 0;
+          border-top-right-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+          background-color: $color-red;
+          color: $color-white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &__image {
+          position: relative;
+          border-radius: 0.5rem;
+          overflow: hidden;
+          width: 250px;
+          height: 130px;
+        }
+
+        &__date {
+          padding: 1rem 0;
+          color: $color-purple;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
